@@ -1,0 +1,44 @@
+<section>
+    <div class="form">
+       
+            <div class="container">
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="prodctName"  class="form-label">Product Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodName" id="prodctName">            
+                      </div>
+                      <div class="mb-3">
+                        <label for="prodctSrc" class="form-label">Product src</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodsrc" id="prodctSrc">            
+                      </div>
+                      <div class="mb-3">
+                        <label for="prodctDesc" class="form-label">Product Descraption</label>
+                        <input type="text" class="form-control" [(ngModel)]="proddescript" id="prodctDesc">            
+                      </div>
+                      <div class="mb-3">
+                        <label for="prodctPrice" class="form-label">Product price</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodprice" id="prodctPrice">            
+                      </div>
+                     
+                      <button  class="btn btn-primary" (click)="pushdata()">Submit</button>
+                    
+                </div>
+            </div>
+    </div>
+   <div class="container">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-md-4 mt-2 mb-2">
+            <div  class="card " id="prodc" >
+                <img src="{{product.src}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.prodName}}</h5>
+                  <p class="card-text">{{product.descript}}</p>
+                  <h6>{{product.price}} $</h6>
+                  <button href="#" class="btn btn-primary m-1">Buy Now</button>
+                  <button href="#" class="btn btn-danger" (click)="deleteProduct(product)" >Delete</button>
+                </div>
+              </div>
+        </div>
+    </div>
+   </div>
+</section>
